@@ -69,6 +69,37 @@ public class leetcodeProblems {
   /*Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.*/
   public int maxSubArray(int[] nums) {
 
+    //'i' will hold the initial marker, 'j' will hold the sums progressing forward from 'i' and 'k' will hold the sums progressing from the end.
+
+    int startingIndex = 0;
+    int endingIndex = nums.length;
+    int maxSum = 0;
+
+    for (int i = 0; i < nums.length - 1; i++) {
+
+      int leftBoundMarker = nums[i];
+      int tempSum = leftBoundMarker;
+      for (int j = i + 1; j < nums.length; j++) {
+        int rightBoundMarker = nums[j];
+        tempSum += nums[j];
+        if (tempSum > maxSum) {
+          maxSum = tempSum;
+          startingIndex = i;
+          endingIndex = j;
+        }
+      }
+      tempSum = 0;
+      for (int k = nums.length; k > i; k--) {
+        tempSum += nums[k];
+        if (tempSum > maxSum){
+          maxSum = tempSum;
+          startingIndex = i;
+          endingIndex = k;
+        }
+      }
+      return maxSum;
+
+    }
 
   }
 
