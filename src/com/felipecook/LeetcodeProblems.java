@@ -149,7 +149,7 @@ public class LeetcodeProblems {
     return 0;
 
   }
-  
+
   /*
   * Solve the game "Guess a number", find a secret integer between 1 and 1000000
 in less than 50 guesses. Write a function that solves the game without user input and returns the
@@ -201,9 +201,28 @@ Warning: You are not allowed to call verify() more that 50 times or you lose.
     }
   }
 
+  /*
+  * Write a program that outputs sequentially the integers from 1 to 99, but on some conditions prints a string instead:
 
+    when the integer is a multiple of 3 print “Open” instead of the number,
 
+    when it is a multiple of 7 print “Source” instead of the number,
 
+    when it is a multiple of both 3 and 7 print “OpenSource” instead of the number.
+  * */
+  public void openSource() {
+    for(int i = 1; i < 100; i++){
+      if (i % 3 == 0 && i % 7 == 0) {
+        System.out.println("OpenSource");
+      } else if (i % 3 == 0) {
+        System.out.println("Open");
+      } else if (i % 7 == 0) {
+        System.out.println("Source");
+      } else {
+        System.out.println(i);
+      }
+    }
+  }
 
   public static void main(String[] args) {
 
