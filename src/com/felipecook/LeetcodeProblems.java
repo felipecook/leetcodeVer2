@@ -1,6 +1,6 @@
 package com.felipecook;
 
-public class leetcodeProblems {
+public class LeetcodeProblems {
 
   /*Given a non-empty array of integers, every element appears twice except for one. Find that single one.*/
   public int singleNumber(int[] nums) {
