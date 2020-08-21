@@ -1,5 +1,8 @@
 package com.felipecook;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class LeetcodeProblems {
 
   /*Given a non-empty array of integers, every element appears twice except for one. Find that single one.*/
@@ -105,6 +108,43 @@ public class LeetcodeProblems {
   }
 
 
+  public int sumListOfStrings (List<String> stringItems) {
+    int sum = 0;
+    for (int i = 0; i < stringItems.size(); i++) {
+      if (isNumeric(stringItems.get(i))){
+        int number = Integer.parseInt(stringItems.get(i));
+        sum += number;
+      }
+    }
+    return sum;
+  }
+
+  private boolean isNumeric(String word){
+    try {
+      Integer.parseInt(word);
+
+      return true;
+    }
+    catch (NumberFormatException e){
+      return false;
+    }
+  }
+
+
+  public int sumListOfStringsRecursion (LinkedList<String> stringItems) {
+    if (stringItems.size() != 0) {
+      if (isNumeric(stringItems.get(0))) {
+        int number = Integer.parseInt(stringItems.get(0));
+        stringItems.removeFirst();
+        return number + sumListOfStrings(stringItems);
+      }
+    }
+    return 0;
+
+  }
+
+
+  
 
   public static void main(String[] args) {
 
