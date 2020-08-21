@@ -149,8 +149,23 @@ public class LeetcodeProblems {
     return 0;
 
   }
+  
+  /*
+  * Solve the game "Guess a number", find a secret integer between 1 and 1000000
+in less than 50 guesses. Write a function that solves the game without user input and returns the
+solution by using the function verify() which is defined with the following
+specification:
+function verify(guess: integer) -> integer
+Argument:
+     guess (integer) the number to verify
+Returns:
+     0 if the guess is the solution, your program won
+     -1 if the solution is smaller than the guess parameter
+     1  if the solution is bigger than the guess parameter
 
-  public boolean guessingGame(int randomNumber) {
+Warning: You are not allowed to call verify() more that 50 times or you lose.
+* */
+  public void guessingGame(int randomNumber) {
     int max = 1000000;
     int min = 1;
     boolean flag = false;
@@ -162,19 +177,18 @@ public class LeetcodeProblems {
       int answer = verify(guessNumber, randomNumber);
 
       if (answer == 0) {
-        System.out.println("The random number is :" + answer);
+        System.out.println("The random number is :" + guessNumber);
         flag = true;
 
       } else if (answer == 1) {
-        max = max / 2;
+        max = guessNumber - 1;
 
       } else if (answer == -1) {
-        min = max / 2;
+        min = guessNumber + 1;
 
       }
 
     }
-  return true;
   }
 
   private int verify(int guessedNumber, int randomNumber) {
