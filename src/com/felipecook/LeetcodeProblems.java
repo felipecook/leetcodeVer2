@@ -165,7 +165,7 @@ Returns:
 
 Warning: You are not allowed to call verify() more that 50 times or you lose.
 * */
-  public void guessingGame(int randomNumber) {
+  public Object guessingGame(int randomNumber) {
     int max = 1000000;
     int min = 1;
     boolean flag = false;
@@ -180,24 +180,25 @@ Warning: You are not allowed to call verify() more that 50 times or you lose.
         System.out.println("The random number is :" + guessNumber);
         flag = true;
 
-      } else if (answer == 1) {
+      } else if (answer == -1) {
         max = guessNumber - 1;
 
-      } else if (answer == -1) {
+      } else if (answer == 1) {
         min = guessNumber + 1;
 
       }
 
     }
+    return null;
   }
 
   private int verify(int guessedNumber, int randomNumber) {
     if (guessedNumber == randomNumber) {
       return 0;
     } else if (guessedNumber < randomNumber) {
-      return -1;
-    } else {
       return 1;
+    } else {
+      return -1;
     }
   }
 
