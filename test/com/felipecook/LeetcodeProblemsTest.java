@@ -24,4 +24,9 @@ class LeetcodeProblemsTest {
   void sumListOfStringsRecursion() {
     assertEquals(3, leetcodeProblems.sumListOfStrings(testlist));
   }
+
+  @Test
+  void guessingGame() {
+    assertEquals(50, leetcodeProblems.guessingGame(50));
+  }
 }

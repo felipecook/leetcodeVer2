@@ -107,7 +107,10 @@ public class LeetcodeProblems {
     return 0;
   }
 
-
+  /*
+   * Write a function that takes a list of strings and returns the sum of the list items that represent an integer (skipping the other items)
+   *
+   * */
   public int sumListOfStrings (List<String> stringItems) {
     int sum = 0;
     for (int i = 0; i < stringItems.size(); i++) {
@@ -131,6 +134,10 @@ public class LeetcodeProblems {
   }
 
 
+  /*
+  * Write a function that takes a list of strings and returns the sum of the list items that represent an integer (skipping the other items)
+  *
+  * */
   public int sumListOfStringsRecursion (LinkedList<String> stringItems) {
     if (stringItems.size() != 0) {
       if (isNumeric(stringItems.get(0))) {
@@ -143,13 +150,55 @@ public class LeetcodeProblems {
 
   }
 
+  public boolean guessingGame(int randomNumber) {
+    int max = 1000000;
+    int min = 1;
+    boolean flag = false;
 
-  
+    while (!flag){
+
+      int guessNumber = (max + min) / 2;
+
+      int answer = verify(guessNumber, randomNumber);
+
+      if (answer == 0) {
+        System.out.println("The random number is :" + answer);
+        flag = true;
+
+      } else if (answer == 1) {
+        max = max / 2;
+
+      } else if (answer == -1) {
+        min = max / 2;
+
+      }
+
+    }
+  return true;
+  }
+
+  private int verify(int guessedNumber, int randomNumber) {
+    if (guessedNumber == randomNumber) {
+      return 0;
+    } else if (guessedNumber < randomNumber) {
+      return -1;
+    } else {
+      return 1;
+    }
+  }
+
+
+
+
 
   public static void main(String[] args) {
 
     System.out.println(isHappy(19));
 
   }
+
+
+
+
 
 }
