@@ -165,7 +165,7 @@ Returns:
 
 Warning: You are not allowed to call verify() more that 50 times or you lose.
 * */
-  public Object guessingGame(int randomNumber) {
+  public guessingGame(int randomNumber) {
     int max = 1000000;
     int min = 1;
     boolean flag = false;
@@ -189,7 +189,7 @@ Warning: You are not allowed to call verify() more that 50 times or you lose.
       }
 
     }
-    return null;
+    
   }
 
   private int verify(int guessedNumber, int randomNumber) {
