@@ -165,7 +165,7 @@ Returns:
 
 Warning: You are not allowed to call verify() more that 50 times or you lose.
 * */
-  public guessingGame(int randomNumber) {
+  public void guessingGame(int randomNumber) {
     int max = 1000000;
     int min = 1;
     boolean flag = false;
@@ -224,6 +224,15 @@ Warning: You are not allowed to call verify() more that 50 times or you lose.
       }
     }
   }
+
+
+  /*
+  Move the first letter of each word to the end of it,
+  then add "ay" to the end of the word. Leave punctuation marks untouched.
+   */
+
+
+
 
   public static void main(String[] args) {
 
