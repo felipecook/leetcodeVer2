@@ -31,7 +31,8 @@ public class KataProblemDataReverse {
           counter--;
         }
 
-        
+        reverseCounter -= 8;
+
       }
 
       
